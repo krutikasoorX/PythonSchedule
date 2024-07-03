@@ -15,7 +15,7 @@ pipeline {
     }
     stage('hello') {
       steps {
-        bat 'python loopExec.py ${Num1} ${Num2}'
+        bat 'python loopExec.py'
       }
     }
   }
