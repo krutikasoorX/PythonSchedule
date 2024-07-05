@@ -18,12 +18,12 @@ pipeline {
             }}
     stage('version') {
       steps {
-        sh 'python --version'
+        bat 'python --version'
       }
     }
     stage('hello') {
       steps {
-        sh 'python loopExec.py'
+        bat 'python loopExec.py'
       }
     }
   }
