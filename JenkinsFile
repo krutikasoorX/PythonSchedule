@@ -1,11 +1,7 @@
 pipeline {
-  agent {
-        docker {
-            image 'ubuntu'
-        }
-    }
+  agent any
   triggers {
-        cron('*/5 * * * *')
+        cron('*/2 * * * *')
     }
   environment {
         Num1 = 9
