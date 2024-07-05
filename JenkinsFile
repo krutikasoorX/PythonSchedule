@@ -15,12 +15,12 @@ pipeline {
         cron('*/2 * * * *')
     }
   stages {
-   stage('Checkout') {
-            steps {
+   //stage('Checkout') {
+            //steps {
 
                 // Checkout the GitHub repository
-                git branch: 'main', credentialsId: '8ce46a16-a3a9-4ff5-8338-ffdc1ea7e4b0', url: 'https://github.com/krutikasoorX/PythonSchedule.git'
-            }}
+               // git branch: 'main', credentialsId: '8ce46a16-a3a9-4ff5-8338-ffdc1ea7e4b0', url: 'https://github.com/krutikasoorX/PythonSchedule.git'
+            //}}
     stage('version') {
       steps {
         sh 'python --version'
