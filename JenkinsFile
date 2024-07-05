@@ -1,7 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+        image 'ubuntu'
+        label 'latest'
+        args  '-v /tmp:/tmp'
+    }
+}
+
   environment {
-        PATH = "C://Users/Admin/AppData/Local/Programs/Python/Python311;C://Windows/System32;"  // Adjust the Python path as per your installation
+        //PATH = "C://Users/Admin/AppData/Local/Programs/Python/Python311;C://Windows/System32;"  // Adjust the Python path as per your installation
         Num1 = '9'
         Num2 = '80'
         HOME="."
@@ -18,12 +25,12 @@ pipeline {
             }}
     stage('version') {
       steps {
-        bat 'python --version'
+        sh 'python --version'
       }
     }
     stage('hello') {
       steps {
-        bat 'python loopExec.py'
+        sh 'python loopExec.py'
       }
     }
   }
